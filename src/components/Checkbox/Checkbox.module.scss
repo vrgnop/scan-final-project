@@ -1,0 +1,39 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin: 0px 0px 15px 0px;
+  input[type=checkbox] {
+    display: none;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 25px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    &.unCheck {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox] + label:before {
+    content: '';
+    margin-right: 15px;
+    display: inline-block;
+    top: 0px;
+    left: 0px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid black;
+  }
+  input[type=checkbox]:checked + label:before {
+    font-size: 15px;
+    background: url("../../assets/images/checkbox.svg");
+    text-align: center;
+    line-height: 15px;
+  }
+}

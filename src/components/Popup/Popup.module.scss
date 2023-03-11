@@ -1,0 +1,13 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.popup {
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  background: $dark-turquoise;
+  position: fixed;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-y: hidden;
+}

@@ -1,0 +1,85 @@
+@import "../../SCSS/index";
+@import "../../SCSS/variables";
+
+  .slider {
+    @extend %flex-box;
+    justify-content: space-between;
+    align-items: center;
+    .carouselWrapper {
+      display: flex;
+      padding: 0px 10px;
+      overflow: hidden;
+      height: 260px;
+    }
+    .slides {
+      transition: ease 400ms;
+      @extend %flex-box;
+      align-items: center;
+      overflow: visible;
+      .slide {
+        @extend %flex-box;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 10px;
+        padding: 0px 20px;
+        height: 225px;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius-10;
+        transition: ease 300ms;
+        //@media screen  and (max-width: $desktop){
+        //  & {
+        //    margin: 0;
+        //  }
+        //}
+        div {
+          display: flex;
+          //align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          height: 100%;
+          div {
+            margin: 10px 0px;
+            justify-content: end;
+            &.imgWrapper {
+              justify-content: end;
+            }
+            &.textWrapper {
+              justify-content: start;
+            }
+          }
+
+        }
+
+        img {
+          width: 65px;
+        }
+
+        span {
+          font-size: 18px;
+          @media screen and (min-width: $mobile) and (max-width: $desktop){
+            & {
+              font-size: 14px;
+            }
+          }
+          @media screen and (max-width: $mobile){
+            & {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrapperImg {
+    padding-top: 50px;
+    @extend %flex-box;
+    @extend %padding;
+    justify-content: center;
+    .img {
+      background-size: contain;
+      background-image: url("../../assets/images/ManModels.svg");
+      background-repeat: no-repeat;
+      height: 575px;
+      width: 1307px;
+    }
+  }

@@ -1,0 +1,95 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 5px;
+
+  .arrow {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #D9D9D9;
+    z-index: 100;
+    right: 10px;
+    transition: 200ms all;
+    &.open {
+      border-top: none;
+      border-bottom: 10px solid #D9D9D9;
+    }
+  }
+
+  input {
+    background: $white;
+    cursor: pointer;
+  }
+  .button {
+    width: 100%;
+    box-shadow: none;
+    display: inline-block;
+    position: relative;
+  }
+  .close {
+    width: 100%;
+    justify-content: right;
+    div {
+
+      border-width: 0 1px 1px 0;
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 5px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transition: all 100ms;
+    }
+  }
+
+  .open {
+    text-align: left;
+  }
+  ul {
+    top: 50px;
+    width: 100%;
+    padding-left: 0;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    z-index: 100;
+    }
+
+
+  li {
+    width: inherit;
+    list-style-type: none;
+    .items {
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      border-radius: 0px;
+      border: none;
+      border-bottom: 1px solid $grey;
+      margin: 0px;
+      z-index: 100;
+      &:hover {
+        background: $grey;
+      }
+    }
+    .lastItem {
+      border-bottom: none;
+    }
+  }
+}

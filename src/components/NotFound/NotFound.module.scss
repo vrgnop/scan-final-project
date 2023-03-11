@@ -1,0 +1,19 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapper {
+  @extend %flex-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 45px;
+  }
+  button {
+    width: 300px;
+    font-size: 16px;
+    padding: 15px 0px;
+    background: $purple;
+    color: $white;
+  }
+}

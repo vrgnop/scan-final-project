@@ -1,0 +1,19 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapperDesc, .wrapperMob {
+  height: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+  @media screen and (max-width: $desktop) {
+    .desktop, .wrapperDesc {
+      display: none;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    .mobile, .wrapperMob {
+      display: none;
+    }
+  }

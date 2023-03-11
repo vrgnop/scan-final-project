@@ -1,0 +1,35 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapperMain {
+  @extend %flex-box;
+  justify-content: space-between;
+  @media screen and (max-width: $mobile){
+    & {
+      flex-direction: column;
+    }
+  }
+  .leftSight {
+    width: 60%;
+    @media screen and (max-width: $desktop) {
+      & {
+        width: 100%;
+      }
+    }
+    h1 {
+      margin: 20px 0px;
+    }
+    p {
+      font-size: 20px;
+      @media screen and (max-width: $desktop){
+        & {
+          font-size: 18px;
+        }
+      }
+    }
+    div {
+      margin: 70px 0;
+    }
+  }
+}
+

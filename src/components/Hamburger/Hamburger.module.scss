@@ -1,0 +1,25 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+.wrapper {
+  .popupWrapper {
+    padding: 0px 20px;
+    height: inherit;
+    @extend %flex-box;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @extend %flex-box;
+  justify-content: flex-end;
+  @media screen and (min-width: $mobile){
+    display: none;
+  }
+  .crossWrapper {
+    @extend %flex-box;
+    height: 96.5px;
+    width: 100%;
+    justify-content: space-between;
+    .cross {
+      z-index: 101;
+    }
+  }
+}

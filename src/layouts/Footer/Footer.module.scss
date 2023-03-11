@@ -1,0 +1,22 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+footer {
+  @extend %padding;
+  @extend %flex-box;
+  justify-content: space-between;
+  height: 137px;
+  background: $dark-turquoise;
+  color: $white;
+  .leftSight {
+    text-align: right;
+    address {
+      text-align: right;
+      text-decoration: none;
+      font-style: normal;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}

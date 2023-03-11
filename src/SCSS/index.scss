@@ -1,0 +1,191 @@
+@import "variables";
+@font-face {
+  font-family: 'Ferry';
+  src: url('../assets/fonts/Ferri/Ferry-Black.eot');
+  src: local('Ferry Black'), local('Ferry-Black'),
+  url('../assets/fonts/Ferri/Ferry-Black.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/Ferri/Ferry-Black.woff') format('woff'),
+  url('../assets/fonts/Ferri/Ferry-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
+
+body {
+  background: $white;
+  overflow-x: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $border-radius-10;
+}
+
+main {
+  margin: 70px 60px;
+  min-height: 400px;
+  @media screen and (max-width: $desktop) {
+    & {
+      margin: 20px 20px;
+    }
+  }
+}
+@keyframes rotate {
+  0% { opacity: 0}
+  70% { opacity: 0}
+  100% {opacity: 1}
+}
+
+section {
+  animation: rotate 400ms linear;
+}
+
+
+
+button, input[type=submit] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: 'Inter';
+  border-radius: 5px;
+  transition: all 200ms;
+  //&:not([disabled]):hover {
+  //  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.2);
+  //}
+}
+
+input {
+  box-sizing: border-box;
+  border: 1px solid #C7C7C7;
+  border-radius: $border-radius-5;
+  padding: 15px 15px;
+  margin: 15px 0px;
+  &:focus {
+    outline: none;
+    border: 1px solid $dark-turquoise;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=submit] {
+  @extend %classicButton;
+  border: none;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+button:disabled, input[type=submit]:disabled {
+  cursor: auto;
+  opacity: 0.5;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black;
+}
+
+a:-webkit-any-link.active {
+  color: $dark-turquoise;
+}
+
+h1 {
+  font-family: Ferry;
+  font-size: 60px;
+  @media screen and (min-width: $mobile) and (max-width: $desktop){
+    & {
+    font-size: 35px;
+  }
+  }
+  @media screen and (max-width: $mobile){
+    & {
+      font-size: 28px;
+    }
+  }
+}
+
+h2 {
+  font-family: Ferry;
+  font-size: 45px;
+  margin-bottom: 50px;
+  @media screen and (min-width: $mobile) and (max-width: $desktop){
+    & {
+      font-size: 25px;
+    }
+  }
+  @media screen and (max-width: $mobile){
+    & {
+      font-size: 28px;
+      width: 50%;
+    }
+  }
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 10px 0px;
+  margin: 0px;
+  @media screen and (min-width: $mobile) and (max-width: $desktop){
+    & {
+      font-size: 20px;
+    }
+  }
+}
+
+section {
+  margin: 25px 0px 100px 0px;
+}
+
+%menu {
+  margin-right: 0px;
+  margin-left: 0px;
+  li {
+      list-style-type: none;
+  }
+}
+
+%flex-box{
+  display: flex;
+  align-items: center;
+}
+
+%padding {
+  padding: 0 60px;
+  @media screen and (max-width: $desktop) {
+    & {
+      padding: 0 20px;
+    }
+  }
+}
+
+%classicButton {
+
+  background: $purple;
+  color: $white;
+}
+
+%title {
+  margin: 0px;
+  font-size: 40px;
+}
+
+%shadowWrapper {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+
+
+//.err {
+//  position:absolute ;
+//}

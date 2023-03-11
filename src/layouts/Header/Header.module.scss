@@ -1,0 +1,66 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+
+.desktop {
+  @media screen and (max-width: $mobile){
+    //display: none;
+  }
+}
+header {
+  @extend %padding;
+  @extend %flex-box;
+  font-size: 14px;
+  width: inherit;
+  .logo {
+    width: 33.3%;
+  }
+  @media screen and (max-width: $mobile){
+    justify-content: space-between;
+  }
+  .limitsWrapper {
+    @extend %flex-box;
+    width: 16.16%;
+    justify-content: center;
+    @media screen and (max-width: $mobile){
+      width: inherit;
+    }
+    .limits {
+      width: 80%;
+      text-align: right;
+      padding: 10px 15px;
+      background: $grey-opacity-30;
+      border-radius: $border-radius-5;
+      @media screen and (max-width: $mobile){
+        width: 80%;
+        text-align: left;
+        padding: 5px 15px;
+      }
+      div {
+        margin: 5px 0px;
+        @media screen and (max-width: $mobile){
+          display: flex;
+          flex-direction: column;
+        }
+        span {
+          font-size: 10px;
+          opacity: 0.4;
+          @media screen and (max-width: $mobile){
+            font-size: 8px;
+          }
+          &.used {
+            opacity: 1;
+            font-weight: 700;
+            font-size: 14px;
+          }
+          &.balance {
+            opacity: 1;
+            font-weight: 700;
+            font-size: 14px;
+            color: #8AC540;
+          }
+        }
+      }
+    }
+  }
+}

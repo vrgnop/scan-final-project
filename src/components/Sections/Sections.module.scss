@@ -1,0 +1,13 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.withDesc {
+  h2 {
+    margin-bottom: 15px;
+  }
+  .span {
+    color: $dark-grey;
+    display: block;
+    margin-bottom: 30px;
+  }
+}

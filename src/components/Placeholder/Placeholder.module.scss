@@ -1,0 +1,53 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapper {
+  height: 523px;
+  width: 400px;
+  @media screen and (max-width: $mobile){
+    width: auto;
+  }
+  box-shadow: $box-shadow;
+  padding: 10px 15px;
+  border-radius: $border-radius-10;
+  .menu {
+    display: flex;
+    button {
+      font-weight: 400;
+      font-size: 16px;
+      background: none;
+      padding: 10px 0px;
+      border-radius: 0px;
+      margin: 0px 5px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      color: rgba(0, 0, 0, 0.2);
+
+      &.authorization {
+        width: 40%;
+      }
+
+      &.registration {
+        width: 60%;
+      }
+
+      &:not([disabled]):hover {
+        box-shadow: none;
+        border-bottom: 2px solid $dark-turquoise;
+        color: $dark-turquoise;
+        opacity: 0.7;
+      }
+
+      &.active {
+        cursor: auto;
+        border-bottom: 2px solid $dark-turquoise;
+        color: $dark-turquoise;
+      }
+    }
+  }
+  .form {
+    @extend %flex-box;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}

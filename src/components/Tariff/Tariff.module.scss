@@ -1,0 +1,126 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+:root {
+  /* (...) */
+  --light: 80;
+  /* Пороговое значение, отделяющее "светлые" цвета, от "темных". Рекомендуется 50 - 70 */
+  --threshold: 60;
+}
+
+
+
+.wrapper {
+  @extend %flex-box;
+  justify-content: space-between;
+  //overflow: hidden;
+  @media screen and (max-width: $mobile){
+    & {
+      flex-direction: column;
+    }
+  }
+  .tariff {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius-10;
+    width: 32%;
+    overflow: hidden;
+    @media screen and (min-width: $mobile) and (max-width: $desktop){
+      font-size: 12px;
+    }
+    @media screen and (max-width: $mobile) {
+      margin: 20px 0 20px 0;
+      width: 100%;
+    }
+    .topWrapper {
+      @extend %flex-box;
+      justify-content: space-between;
+      height: 132px;
+      width: 100%;
+      --switch: calc((var(--light) - var(--threshold)) * -100%);
+      color: hsl(0, 0%, var(--switch));
+      .title {
+        margin-left: 25px;
+        min-height: 100px;
+      }
+      img {
+        margin-right: 15px;
+        margin-top: -20px;
+      }
+    }
+    .forWhom {
+      min-height: 40px;
+    }
+    .bottomWrapper {
+      width: 100%;
+      .contentWrapper {
+        padding: 20px 25px;
+        .currentTariff {
+          width: 100%;
+          display: flex;
+          justify-content: end;
+          height: 24px;
+          div {
+            background: #3BA5E0;
+            border-radius: 30px;
+            padding: 2px 10px;
+            color: $white;
+          }
+        }
+        .priceWrapper {
+          @extend %flex-box;
+          margin-bottom: 10px;
+          .price {
+            font-size: 30px;
+            font-weight: 500;
+            @media screen and (min-width: $mobile) and (max-width: $desktop){
+              font-size: 25px;
+            }
+          }
+          .oldPrice {
+            padding-left: 10px;
+            font-size: 25px;
+            opacity: 0.5;
+            font-weight: 500;
+            text-decoration: line-through;
+            @media screen and (min-width: $mobile) and (max-width: $desktop){
+              font-size: 25px;
+            }
+          }
+        }
+        .listWrapper {
+          margin: 50px 0px;
+          span {
+            font-size: 20px;
+            font-weight: 500;
+          }
+          ul {
+            margin: 10px 0px 0px 0px;
+            padding: 0px;
+            li {
+              list-style: none;
+              display: flex;
+              align-items: center;
+              margin-bottom: 5px;
+              &::before {
+                background-image: url("../../assets/images/check-mark.svg");
+                content: '';
+                display: inline-block;
+                margin-right: 10px;
+                height: 20px;
+                width: 20px;
+              }
+            }
+          }
+        }
+        button {
+          width: 100%;
+          padding: 20px 0px;
+          background: $purple;
+          font-size: 20px;
+          color: $white;
+        }
+      };
+    }
+  }
+
+}

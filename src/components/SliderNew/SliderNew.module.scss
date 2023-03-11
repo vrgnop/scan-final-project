@@ -1,0 +1,118 @@
+@import "../../SCSS/index";
+@import "../../SCSS/variables";
+
+.slider {
+  @extend %flex-box;
+  justify-content: space-between;
+  align-items: center;
+  //@media screen and (max-width: $mobile){
+  //  align-items: flex-end;
+  //}
+  .arrowWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      height: inherit;
+    }
+  }
+  .carouselWrapper {
+    display: flex;
+    overflow: hidden;
+    border: 2px solid $dark-turquoise;
+    border-radius: $border-radius-10;
+    position: relative;
+    width: 100%;
+    @media screen and (max-width: $mobile){
+      flex-direction: column;
+      border: none;
+      box-shadow: $box-shadow;
+    }
+    .total {
+      background: $dark-turquoise;
+      color: $white;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      height: inherit;
+      z-index: 100;
+      font-size: 20px;
+      font-weight: 500;
+      width: 170px;
+      @media screen and (max-width: $mobile){
+        flex-direction: row;
+        font-size: 14px;
+        width: auto;
+      }
+      span {
+        margin: 15px 20px;
+        text-align: center;
+        width: 33.3%;
+      }
+    }
+  }
+  .slides {
+    transition: ease 400ms;
+    @extend %flex-box;
+    align-items: center;
+    justify-content: center;
+    min-height: 170px;
+    @media screen and (max-width: $mobile){
+      justify-content: flex-start;
+      flex-direction: row;
+      min-height: auto;
+    }
+    &.loading {
+      width: 100%;
+    }
+    .slide {
+      @extend %flex-box;
+      justify-content: space-between;
+      align-items: center;
+      transition: ease 300ms;
+      .dateWrapper {
+        @extend %flex-box;
+        flex-direction: column;
+        align-items: center;
+        width: inherit;
+        span {
+          font-size: 18px;
+          margin: 15px 10px;
+        }
+        @media screen and (max-width: $mobile){
+          flex-direction: row;
+          span {
+            text-align: center;
+            width: inherit;
+            font-size: 14px;
+          }
+        }
+      }
+      .line {
+        content: '';
+        width: 2px;
+        height: 120px;
+        background: $grey;
+        @media screen and (max-width: $mobile){
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+.wrapperImg {
+  padding-top: 50px;
+  @extend %flex-box;
+  @extend %padding;
+  justify-content: center;
+  .img {
+    background-size: contain;
+    background-image: url("../../assets/images/ManModels.svg");
+    background-repeat: no-repeat;
+    height: 575px;
+    width: 1307px;
+  }
+}

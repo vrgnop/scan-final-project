@@ -1,0 +1,56 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapper {
+  transition: 300ms all;
+  &:not([disabled]).right:hover {
+    transform: translate(5px, 0px);
+  }
+  &:not([disabled]).left:hover {
+    transform: translate(-5px, 0px);
+  }
+  &.absolute {
+    @media screen and (max-width: $mobile){
+      z-index: 100;
+      position: absolute;
+      &.right {
+        right: 20px;
+      }
+  }
+  }
+  .arrow {
+    background: none;
+    cursor: pointer;
+    border: solid black;
+    opacity: 0.4;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 0px 3px 2px 3px;
+    transition: all 200ms;
+    @media screen and (max-width: $mobile){
+      padding: 7px;
+      border-width: 0 3px 3px 0;
+      border-radius: 0px 2px 1px 2px;
+    }
+    &:disabled {
+      cursor: auto;
+      opacity: 0.1;
+    }
+    &:not([disabled]):hover {
+      border-color: $dark-turquoise;
+      opacity: 1;
+    }
+    &.right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    &.left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+  }
+}
+
+

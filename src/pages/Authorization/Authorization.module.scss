@@ -1,0 +1,52 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapper {
+  @extend %flex-box;
+  justify-content: space-between;
+  .title {
+    width: 60%;
+    @media screen and (max-width: $mobile){
+      width: 100%;
+    }
+    h1 {
+      @extend %title;
+      @media screen and (max-width: $mobile){
+        font-size: 22px;
+      }
+    }
+    img {
+      margin-left: 130px;
+      @media screen and (max-width: $mobile){
+        margin-left: 0;
+      }
+    }
+  }
+  .authorizationDesc {
+    width: 40%;
+    @media screen and (max-width: $mobile){
+      display: none;
+    }
+    .locker {
+      left: -40px;
+      top: -40px;
+    }
+  }
+  .authorizationMob {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $mobile){
+      display: none;
+    }
+    .locker {
+      left: 120px;
+      top: -70px;
+    }
+  }
+  .authorizationDesc, .authorizationMob {
+    position: relative;
+    .locker {
+      position: absolute;
+    }
+  }
+}

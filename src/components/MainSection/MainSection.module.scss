@@ -1,0 +1,28 @@
+@import "../../SCSS/variables";
+@import "../../SCSS/index";
+
+.wrapper {
+  @extend %flex-box;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (max-width: $mobile){
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+  }
+  .text {
+    @extend %flex-box;
+    flex-direction: column;
+    align-items: flex-start;
+    h1 {
+      @media screen and (min-width: $mobile){
+      font-size: 40px;
+      }
+    }
+    span {
+      max-width: 400px;
+      font-size: 20px;
+    }
+  }
+}
