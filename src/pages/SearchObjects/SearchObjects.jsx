@@ -260,7 +260,7 @@ function SearchObjects() {
                   label={"Инн компании*"}
                   value={inn}
                   isRequired={true}
-                  type={"text"}
+                  type={"number"}
                   onBlur={() =>
                     inn.length < 10
                       ? setInnErr({
@@ -294,7 +294,7 @@ function SearchObjects() {
                   label={"Количество документов в выдаче*"}
                   value={documentsCount}
                   isRequired={true}
-                  type={"text"}
+                  type={"number"}
                   onChange={(e) => onChangeDocumentsCount(e)}
                   placeholder={"от 1 до 1000"}
                 />
@@ -321,16 +321,43 @@ function SearchObjects() {
               <label>Диапазон поиска*</label>
               <div>
                 <input
+                  placeholder={"Дата старта"}
                   value={dateStart}
+                  className={styles.date}
                   onChange={(e) => setDateStart(e.target.value)}
-                  type={"date"}
+                  type={"text"}
+                  onFocus={(e) => {
+                    e.target.type === "text" && e.target.blur();
+                    e.target.type = "date";
+                    if (e.target.value === "") {
+                      let now = new Date()
+                        .toLocaleDateString()
+                        .split("/")
+                        .reverse()
+                        .join("-");
+                      e.target.value = now;
+                    }
+                  }}
                   max={now}
                 />
                 <input
-                  placeholder={""}
+                  placeholder={"Дата окончания"}
                   value={dateEnd}
+                  className={styles.date}
                   onChange={(e) => setDateEnd(e.target.value)}
-                  type={"date"}
+                  type={"text"}
+                  onFocus={(e) => {
+                    e.target.type === "text" && e.target.blur();
+                    e.target.type = "date";
+                    if (e.target.value === "") {
+                      let now = new Date()
+                        .toLocaleDateString()
+                        .split("/")
+                        .reverse()
+                        .join("-");
+                      e.target.value = now;
+                    }
+                  }}
                   max={now}
                   min={dateStart}
                   disabled={(dateStart === "" && true) || false}

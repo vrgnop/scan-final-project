@@ -117,7 +117,7 @@ function SignIn() {
         <Input
           label={"Логин или номер телефона:"}
           value={login}
-          type={"tel"}
+          type={"text"}
           isRequired={true}
           onBlur={(e) =>
             pureLogin.match(phoneFullReg)

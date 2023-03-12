@@ -28,6 +28,7 @@
     }
     input {
       width: inherit;
+      min-height: 22.5px;
     }
     input[type=submit] {
       @extend %classicButton;
